@@ -9,7 +9,7 @@ interface WhyCardProps {
 
 const WhyCard: React.FC<WhyCardProps> = async ({ title, description, subdescription, motion }) => {
   return (
-    <div className='card why-card'>
+    <div className='card group why-card'>
       <div className='card-content'>
         <h3 className='card-title'>{title}</h3>
         <div className='space-y-2 mb-4'>
