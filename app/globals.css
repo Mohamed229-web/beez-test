@@ -34,7 +34,11 @@ body {
   }
 
   .card {
-    @apply relative border border-[#e4e4e7] overflow-hidden rounded-xl p-4 md:p-6 hover:shadow-md transition-shadow duration-300;
+    @apply relative border border-[#e4e4e7] overflow-hidden rounded-xl p-4 md:p-6 hover:shadow-md transition-shadow duration-500 bg-[radial-gradient(circle_at_center,#fbedde_0%,#fcf3ea_5%,#ffffff_100%)] bg-[length:100%_100%] bg-center;
+  }
+
+  .card:hover {
+    @apply bg-[length:120%_120%];
   }
 
   .why-card {
@@ -75,6 +79,10 @@ body {
   .chat-message {
     @apply border border-gray-300 bg-[linear-gradient(to_bottom,#fafafa,#f0f0f0)] px-3 py-2 rounded-xl shadow-md max-w-fit;
   }
+
+  .stackIcon {
+    @apply rounded-xl flex flex-col items-center justify-center h-full bg-[radial-gradient(circle,rgba(255,165,0,0.3)_0%,rgba(24,24,27,0.05)_60%,rgba(24,24,27,0)_100%)];
+  }
 }
 
 @layer utilities {
@@ -84,7 +92,7 @@ body {
       transform: translate(0, 0);
     }
     50% {
-      transform: translate(8px, -8px);
+      transform: translate(15px, -30px);
     }
   }
 
@@ -97,20 +105,10 @@ body {
       transform: translate(-8px, -8px);
     }
   }
-  /* 
-  .animate-hover {
-    animation: hover 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  } */
-
   .group:hover .group-hover\:animate-hover {
-    animation: hover 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: hover 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  /* 
-  .animate-hover-reverse {
-    animation: hover-reverse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  } */
-
   .group:hover .group-hover\:animate-hover-reverse {
-    animation: hover-reverse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: hover-reverse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
