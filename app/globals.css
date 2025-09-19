@@ -80,8 +80,14 @@ body {
     @apply border border-gray-300 bg-[linear-gradient(to_bottom,#fafafa,#f0f0f0)] px-3 py-2 rounded-xl shadow-md max-w-fit;
   }
 
-  .stackIcon {
+  .stack-icon {
     @apply rounded-xl flex flex-col items-center justify-center h-full bg-[radial-gradient(circle,rgba(255,165,0,0.3)_0%,rgba(24,24,27,0.05)_60%,rgba(24,24,27,0)_100%)];
+  }
+  .stacks-motion-grid {
+    @apply grid grid-cols-[repeat(5,80px)] gap-4 overflow-hidden;
+  }
+  .stack-col-list {
+    @apply grid gap-4 max-h-[320px];
   }
 }
 
@@ -105,6 +111,42 @@ body {
       transform: translate(-8px, -8px);
     }
   }
+
+  @keyframes loop-y-top {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, -300px, 0);
+    }
+  }
+  @keyframes loop-y-bottom {
+    from {
+      transform: translate3d(0, -300px, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .marquee-track.marquee-track--bottom {
+    animation: loop-y-bottom var(--speed, 12s) linear infinite;
+    will-change: transform;
+  }
+  .marquee-track.marquee-track--top {
+    animation: loop-y-top var(--speed, 12s) linear infinite;
+    will-change: transform;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
   .group:hover .group-hover\:animate-hover {
     animation: hover 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
