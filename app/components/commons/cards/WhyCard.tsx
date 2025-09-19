@@ -17,7 +17,7 @@ const WhyCard: React.FC<WhyCardProps> = async ({ title, description, subdescript
           {subdescription && <p className='card-sub-description'>{subdescription}</p>}
         </div>
       </div>
-      <div className='flex grow justify-center items-center min-h-72'>
+      <div className='flex grow justify-center items-center min-h-80'>
         {motion}
       </div>
     </div>

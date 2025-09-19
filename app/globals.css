@@ -59,7 +59,7 @@ body {
   }
   .why-card .card-description,
   .why-card .card-sub-description {
-    @apply text-sm md:text-base text-gray-600;
+    @apply text-sm md:text-base text-gray-600 max-w-[460px];
   }
 
   .orange-cursor {
